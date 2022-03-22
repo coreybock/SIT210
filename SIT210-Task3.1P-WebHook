@@ -1,0 +1,43 @@
+#include "Adafruit_DHT.h"
+
+// Example testing sketch for various DHT humidity/temperature sensors
+// Written by ladyada, public domain
+// Adapted by Corey Bock for SIT210 T3.1P
+
+#define DHTPIN 2     // what pin we're connected to
+
+// Uncomment whatever type you're using!
+#define DHTTYPE DHT11		// DHT 11 
+//#define DHTTYPE DHT22		// DHT 22 (AM2302)
+//#define DHTTYPE DHT21		// DHT 21 (AM2301)
+
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+	Serial.begin(9600); 
+	Serial.println("DHTxx test!");
+
+	dht.begin();
+}
+
+void loop() {
+	delay(30000);
+
+	float t = dht.getTempCelcius();
+
+	if (isnan(t)) {
+		Serial.println("Failed to read from DHT sensor!");
+		return;
+	}
+
+	Serial.print("Temp: "); 
+	Serial.print(t);
+	Serial.println("*C ");
+	Serial.println(Time.timeStr());
+	
+	String newTemp = String(t);
+	
+	Particle.publish("temp", newTemp, PRIVATE);
+}
+
