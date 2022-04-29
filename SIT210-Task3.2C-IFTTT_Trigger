@@ -1,0 +1,49 @@
+#include "Adafruit_DHT.h"
+
+#define DHTPIN 2     // what pin we're connected to
+#define DHTTYPE DHT11		// DHT 11 
+
+#define LOW_TEMP_THRESHOLD 15
+#define HIGH_TEMP_THRESHOLD 25
+
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+	Serial.begin(9600); 
+	Serial.println("DHTxx test!");
+
+	dht.begin();
+}
+
+void loop() {
+	delay(300000);
+
+	float t = dht.getTempCelcius();
+
+	if (isnan(t)) {
+		Serial.println("Failed to read from DHT sensor!");
+		return;
+	}
+
+	
+	if(t < LOW_TEMP_THRESHOLD){
+	    Particle.publish("temp-change", "low");
+	    Serial.print("Temp is too low. ");
+	    Serial.print(t);
+	    Serial.println("*C ");
+	}
+	else if (t > HIGH_TEMP_THRESHOLD){
+	    Particle.publish("temp-change", "high");
+	    Serial.print("Temp is too high. ");
+	    Serial.print(t);
+	    Serial.println("*C ");
+	}
+	else {
+	    Serial.print("Temp is acceptable. ");
+	    Serial.print(t);
+	    Serial.println("*C ");
+	    return;
+	}
+
+}
