@@ -1,0 +1,47 @@
+int led = D7; 
+
+void blinkLong() {
+    digitalWrite(led, HIGH);
+    delay(1500);
+    digitalWrite(led, LOW);
+    delay(500);
+}
+
+void blinkShort(){
+    digitalWrite(led, HIGH);
+    delay(500);
+    digitalWrite(led, LOW);
+    delay(500);
+}
+
+
+void waveHandler(const char *event, const char *data)
+{
+ Serial.print("Receieved: ");
+ Serial.println(data);
+ 
+ String newData = String(data);
+
+ if(newData.equals("wave")){
+     //LED will blink three short times for wave
+     blinkShort();
+     blinkShort();
+     blinkShort();
+ }
+ else if(newData.equals("pat")){
+     //LED will blink four long times for pat
+     blinkLong();
+     blinkLong();
+     blinkLong();
+     blinkLong();
+ }
+  
+}
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+  Particle.subscribe("Deakin_RIOT_SIT210_Photon_Buddy", waveHandler);
+  Serial.println("Starting");
+}
