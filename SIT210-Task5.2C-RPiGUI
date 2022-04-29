@@ -1,0 +1,52 @@
+from tkinter import *
+import tkinter.font
+from gpiozero import LED
+import RPi.GPIO
+RPi.GPIO.setmode(RPi.GPIO.BCM)
+
+blueLED = LED(17)
+redLED = LED(22)
+greenLED = LED(27)
+
+win = Tk()
+win.title("LED Toggler")
+myFont = tkinter.font.Font(family = 'Helvetica', size = 12, weight = "bold")
+frame = LabelFrame(win, text='Choose your LED').grid(row=0,column=0)
+
+def blueLedToggle():
+	greenLED.off()
+	redLED.off()
+	blueLED.on()
+
+def redLedToggle():
+	greenLED.off()
+	redLED.on()
+	blueLED.off()
+
+def greenLedToggle():
+	greenLED.on()
+	redLED.off()
+	blueLED.off()
+		
+def close():
+	RPi.GPIO.cleanup()
+	win.destroy()
+
+
+var = IntVar()
+
+blueRadio = Radiobutton(frame, text='Blue LED', variable=var, value='1', command=blueLedToggle)
+blueRadio.grid(row=0,column=1)
+	
+redRadio = Radiobutton(frame, text='Red LED', variable=var, value='2', command=redLedToggle)
+redRadio.grid(row=0,column=2)
+
+greenRadio = Radiobutton(frame, text='Green LED', variable=var, value='3', command=greenLedToggle)
+greenRadio.grid(row=0,column=3)
+
+closeButton = Button(win, text = 'Close', font = myFont, command = close, bg = 'bisque2', height = 1, width = 6)
+closeButton.grid(row=1,columnspan=5)
+
+win.protocol("WM_DELETE_WINDOW", close)
+
+win.mainloop()
