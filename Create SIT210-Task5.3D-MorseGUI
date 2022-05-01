@@ -1,0 +1,77 @@
+import tkinter
+from tkinter import *
+import tkinter.font
+import tkinter.messagebox
+from gpiozero import LED
+import RPi.GPIO
+import time
+
+RPi.GPIO.setmode(RPi.GPIO.BCM)
+
+blueLED = LED(17)
+redLED = LED(22)
+greenLED = LED(27)
+
+win = Tk()
+win.title("Morse Code Flasher")
+myFont = tkinter.font.Font(family='Helvetica', size=12, weight="bold")
+
+mcDict = {"a": "sl", "b": "lsss", "c": "lsls", "d": "lss", "e": "s", "f": "ssls", "g": "lls", "h": "ssss", "i": "ss",
+          "j": "slll", "k": "lsl", "l": "slss", "m": "ll", "n": "ls", "o": "lll", "p": "slls", "q": "llsl", "r": "sls",
+          "s": "sss", "t": "l", "u": "ssl", "v": "sssl", "w": "sll", "x": "lssl", "y": "lsll", "z": "llss"}
+
+
+def close():
+    RPi.GPIO.cleanup()
+    win.destroy()
+
+def shortBlink():
+    redLED.on()
+    time.sleep(0.5)
+    redLED.off()
+    time.sleep(0.5)
+
+def longBlink():
+    redLED.on()
+    time.sleep(1.5)
+    redLED.off()
+    time.sleep(0.5)
+
+def readCharMC(char):
+    morse = list(mcDict[char])
+    print("Showing character: " + char)
+    for c in morse:
+        if c == 's':
+            shortBlink()
+
+        if c == 'l':
+            longBlink()
+
+def readString():
+    msg = text.get(1.0, tkinter.END)
+    msg = msg.strip()
+    msgChar = list(msg)
+
+    if(len(msgChar) > 12):
+        userErrorBox()
+        return
+
+    for m in msgChar:
+        readCharMC(m)
+    print("")
+
+def userErrorBox():
+    tkinter.messagebox.showerror('Message Error', 'Message cannot be longer than 12 characters')
+
+
+text = Text(win, height=1, width=40)
+text.grid(row=0, columnspan=6)
+
+submitButton = Button(win, text='Read', font=myFont, command=readString, bg='bisque2', height=1, width=3)
+submitButton.grid(row=1, columnspan=6)
+
+closeButton = Button(win, text='Close', font=myFont, command=close, bg='bisque2', height=1, width=3)
+closeButton.grid(row=2, columnspan=6)
+
+win.protocol("WM_DELETE_WINDOW", close)
+win.mainloop()
