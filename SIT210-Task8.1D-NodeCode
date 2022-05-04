@@ -1,0 +1,26 @@
+/*
+ * I2C Node Program for SIT201 Task 8.1D
+ * Corey James Bock
+ * Ran on Arudino Uno
+ */
+
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(0x8);              
+  Wire.onReceive(eventHandler);
+  
+  pinMode(8, OUTPUT);
+  digitalWrite(8, LOW);
+}
+ 
+void eventHandler() {
+  while (Wire.available()) { 
+    char c = Wire.read();
+    digitalWrite(8, c);
+  }
+}
+
+void loop() {
+  delay(100);
+}
