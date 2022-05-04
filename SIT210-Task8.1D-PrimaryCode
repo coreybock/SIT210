@@ -1,0 +1,29 @@
+from smbus import SMBus
+
+def main():
+    bus = SMBus(1)
+    addr = 0x8
+    ctrl = 1
+
+    print()
+    print("I2C Primary Program for SIT201 Task 8.1D ")
+    print("Corey James Bock")
+    print()
+
+    while ctrl == 1:
+        action = input("Please enter your action >>   ")
+
+        if action == "1":
+            bus.write_byte(addr, 0x1)
+        elif action == "0":
+            bus.write_byte(addr, 0x0)
+        else:
+            print("## Please enter a valid option ##")
+
+if __name__ == '__main__':
+    try:
+        main()
+
+    except KeyboardInterrupt:
+        print()
+        print("Program terminated by user")
