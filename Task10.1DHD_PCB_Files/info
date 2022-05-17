@@ -1,0 +1,347 @@
+{
+  "uuid": "217de13e0c1d3e60ac9cd8bcb2e69353",
+  "path": "Offline/Task%2010.1DHD",
+  "name": "Task 10.1DHD",
+  "content": "",
+  "created_at": "2022-05-17 09:10:44",
+  "updated_at": "2022-05-17 11:58:53",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "2c2f3332dd26f4f645c59efec5893fe8",
+      "title": "Uno-SM Sensor",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fdb5d6e74d4b4639aff0aec9a873595f": 1,
+        "d162de3b2ad141c987674fb2233e2dd7": 2
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "CON_TERMINAL_BLOCK_03",
+          2,
+          "TERMINAL_BLOCK_3P_5",
+          "J1,J2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "722d3fac28b749968e0d6fb06de42dd6",
+            "uuid": "d162de3b2ad141c987674fb2233e2dd7"
+          }
+        ],
+        [
+          "ARDUINOUNO",
+          1,
+          "ARDUINO",
+          "U1",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "c554704952324a099b7a65ca188c3210",
+            "uuid": "fdb5d6e74d4b4639aff0aec9a873595f"
+          }
+        ]
+      ],
+      "updateTime": 1652747356,
+      "createTime": 1652742644,
+      "histories": [],
+      "created_at": "2022-05-17 09:10:44",
+      "updated_at": "2022-05-17 10:29:16"
+    },
+    {
+      "uuid": "f4f642f0736bbea3c3aa9fa1a37a065c",
+      "title": "Uno-Pump",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "fdb5d6e74d4b4639aff0aec9a873595f": 1,
+        "f5705fa962784e96b17dbc6bc1209085": 3
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "CON_TERMINAL_BLOCK_03",
+          2,
+          "TERMINAL_BLOCK_3P_5",
+          "J1,J2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "722d3fac28b749968e0d6fb06de42dd6",
+            "uuid": "d162de3b2ad141c987674fb2233e2dd7"
+          }
+        ],
+        [
+          "ARDUINOUNO",
+          1,
+          "ARDUINO",
+          "U1",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "c554704952324a099b7a65ca188c3210",
+            "uuid": "fdb5d6e74d4b4639aff0aec9a873595f"
+          }
+        ],
+        [
+          "WTR_LVL_SNR",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J3",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "PUMP_CTRL",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J4",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "I2C",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J5",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "ARDUINOUNO",
+          1,
+          "ARDUINO",
+          "U2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "c554704952324a099b7a65ca188c3210",
+            "uuid": "fdb5d6e74d4b4639aff0aec9a873595f"
+          }
+        ]
+      ],
+      "updateTime": 1652749135,
+      "createTime": 1652748697,
+      "histories": [],
+      "created_at": "2022-05-17 10:51:37",
+      "updated_at": "2022-05-17 10:58:55"
+    },
+    {
+      "uuid": "5b18a62c4c7f823aa026000211397c91",
+      "title": "RPI-Board",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "f5705fa962784e96b17dbc6bc1209085": 2,
+        "5c668b4347f0499ba253edd3b5291481": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "CON_TERMINAL_BLOCK_03",
+          2,
+          "TERMINAL_BLOCK_3P_5",
+          "J1,J2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "722d3fac28b749968e0d6fb06de42dd6",
+            "uuid": "d162de3b2ad141c987674fb2233e2dd7"
+          }
+        ],
+        [
+          "ARDUINOUNO",
+          1,
+          "ARDUINO",
+          "U1",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "c554704952324a099b7a65ca188c3210",
+            "uuid": "fdb5d6e74d4b4639aff0aec9a873595f"
+          }
+        ],
+        [
+          "WTR_LVL_SNR",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J3",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "PUMP_CTRL",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J4",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "I2C",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J5",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "ARDUINOUNO",
+          1,
+          "ARDUINO",
+          "U2",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "c554704952324a099b7a65ca188c3210",
+            "uuid": "fdb5d6e74d4b4639aff0aec9a873595f"
+          }
+        ],
+        [
+          "UNO_PMP_CTRL",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J6",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "UNO_SM_SENS",
+          1,
+          "TERMINAL_BLOCK_3P_5",
+          "J7",
+          {
+            "BOM_Manufacturer Part": "",
+            "puuid": "6728f11b364643f2b63c5ca4b8f9af75",
+            "uuid": "f5705fa962784e96b17dbc6bc1209085"
+          }
+        ],
+        [
+          "RASPBERRY_PI_3_shield",
+          1,
+          "RASPBERRY PI MODEL 3 SHIELD",
+          "PCB1",
+          {
+            "BOM_Supplier Part": "",
+            "BOM_Supplier": "",
+            "BOM_Manufacturer Part": "",
+            "puuid": "dde70d4a9c6745c99e017484e57f933c",
+            "uuid": "5c668b4347f0499ba253edd3b5291481"
+          }
+        ]
+      ],
+      "updateTime": 1652751785,
+      "createTime": 1652750475,
+      "histories": [],
+      "created_at": "2022-05-17 11:21:15",
+      "updated_at": "2022-05-17 11:43:05"
+    },
+    {
+      "uuid": "73b25b48e06a880f79528a1aea15cbe9",
+      "puuid": "217de13e0c1d3e60ac9cd8bcb2e69353",
+      "title": "PCB_Uno-SM Sensor",
+      "filename": "PCB_Uno-SM Sensor.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "722d3fac28b749968e0d6fb06de42dd6": 2,
+        "c554704952324a099b7a65ca188c3210": 1
+      },
+      "BOM": [],
+      "updateTime": 1652750292,
+      "createTime": 1652746442,
+      "histories": [],
+      "created_at": "2022-05-17 10:14:02",
+      "updated_at": "2022-05-17 11:18:12"
+    },
+    {
+      "uuid": "017f28ec46bac92fac0ed2288effafde",
+      "puuid": "217de13e0c1d3e60ac9cd8bcb2e69353",
+      "title": "PCB_Uno-Pump",
+      "filename": "PCB_Uno-Pump.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "6728f11b364643f2b63c5ca4b8f9af75": 3,
+        "c554704952324a099b7a65ca188c3210": 1
+      },
+      "BOM": [],
+      "updateTime": 1652750091,
+      "createTime": 1652749232,
+      "histories": [],
+      "created_at": "2022-05-17 11:00:32",
+      "updated_at": "2022-05-17 11:14:51"
+    },
+    {
+      "uuid": "9daba0e8583e82f6d915e67f4a17a6a8",
+      "puuid": "217de13e0c1d3e60ac9cd8bcb2e69353",
+      "title": "PCB_RPi",
+      "filename": "PCB_RPi.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "6728f11b364643f2b63c5ca4b8f9af75": 2,
+        "dde70d4a9c6745c99e017484e57f933c": 1
+      },
+      "BOM": [],
+      "updateTime": 1652752733,
+      "createTime": 1652752276,
+      "histories": [],
+      "created_at": "2022-05-17 11:51:16",
+      "updated_at": "2022-05-17 11:58:53"
+    }
+  ],
+  "sort": [
+    "2c2f3332dd26f4f645c59efec5893fe8",
+    "f4f642f0736bbea3c3aa9fa1a37a065c",
+    "5b18a62c4c7f823aa026000211397c91"
+  ],
+  "title": "Task 10.1DHD",
+  "foldername": "Task 10.1DHD",
+  "schfilename": "Task 10.1DHD.json",
+  "schfilemtime": 1652751785093
+}
